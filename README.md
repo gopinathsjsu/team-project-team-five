@@ -1,10 +1,10 @@
 # Airport Management System - Team Five
 
 ## Team Members:
--Nalini Mehendale
--Pushya Chandra Leburu
--Sahithi Bommadi
--Sri Thulasi Polavarapu
+- Nalini Mehendale
+- Pushya Chandra Leburu
+- Sahithi Bommadi
+- Sri Thulasi Polavarapu
 
 ## Tech Stack:
 React.js
