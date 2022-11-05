@@ -197,8 +197,6 @@ app.post("/api/updateUserInfo",(req,res)=>{
     });
 });
 
-app.post
-
 
 app.listen(5000, () => {
     console.log("Server running on port 5000")
