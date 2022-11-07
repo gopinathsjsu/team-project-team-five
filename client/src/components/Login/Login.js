@@ -65,16 +65,16 @@ export default function Login() {
 
   return (
 
-    <div className="Login">
+    <div className="Login" >
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
-          <h1 className="header">Airline Management System</h1>
-          <Form.Label>Username</Form.Label>
+          <h1 className="header1">Airport Management System</h1>
+          <Form.Label>Email</Form.Label>
           <Form.Control
             autoFocus
             type="text"
             value={email}
-            placeholder="Your username"
+            placeholder="Your Email"
             onChange={(e) => setEmail(e.target.value)}
             className="Control"
           />
