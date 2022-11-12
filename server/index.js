@@ -1,8 +1,12 @@
 const express = require("express");
+var session = require('express-session');
+const flash = require('express-flash');
 const app = express();
 const bodyParser = require("body-parser");
 const mysql=require("mysql2");
 const cors = require("cors");
+const passport = require("passport");
+var bcrypt = require('bcrypt');
 
 const db= mysql.createPool({
     host:"remotemysql.com",
@@ -11,9 +15,50 @@ const db= mysql.createPool({
     database:"XW1b4VSlnE"
 });
 
-app.use(cors());
+const corsOptions = {
+    origin: "http://localhost:3001",
+    credentials: true,
+    optionSuccessStatus: 200
+  };
+
+const initializePassport = require('./passport-config');
+initializePassport(db, passport);
+
+app.use(cors(corsOptions));
+app.use(flash());
+app.use(session({
+  secret: 'secret',
+  resave: false,
+  saveUninitialized: false
+}));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+app.post('/login', passport.authenticate('local'), (req, res) => {
+    // console.log("here");
+    res.send("success")
+});
+
+app.get('/logout', (req, res) => {
+    req.logout(req.user, err => {
+    if(err) return next(err);
+        res.send("success");    
+    });
+});
+
+app.get('/user', (req, res) => {
+    res.send(req.user)
+});
+
+app.get("/api/getUsers", (req,res)=>{
+    const query="select username,password from temp_accounts;"
+    db.query(query,(error,result)=>{
+        res.send(JSON.stringify(result));
+    });
+});
 
 app.get("/api/get",(req,res)=>{
     const query="Select * from city Limit 100;"
@@ -198,6 +243,7 @@ app.post("/api/updateUserInfo",(req,res)=>{
 });
 
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000")
+app.listen(8000, () => {
+    console.log("Server running on port 8000");
+
 })
