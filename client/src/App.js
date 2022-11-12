@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import React, { useContext } from 'react';
+import React, { useState,useContext } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
@@ -18,10 +18,13 @@ import AirportEmpRoute from './components/AuthComponents/AirportEmpRoute';
 import GateControl from './components/GateControl/GateConrol';
 import AssignBaggage from './components/AssignBaggage/AssignBaggage';
 import FlightSchedules from './components/FlightSchedules/FlightSchedules';
+import Addschedule from './components/Addschedule/addschedule';
 
 function App() {
   const ctx = useContext(AuthLoginInfo);
   console.log(ctx);
+
+function App() {
   return (
     <BrowserRouter>
       <div className="App">
