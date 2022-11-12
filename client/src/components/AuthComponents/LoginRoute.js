@@ -16,7 +16,7 @@ function LoginRoute({ children }) {
   }
   console.log(user.id);
   // zrobić navigate z loginu kiedy jest sie zalogowanym
-  return user.id ? <Navigate to='../' /> : children;
+  return user.id ? <Navigate to='/flights' /> : children;
 
 }
 export default LoginRoute

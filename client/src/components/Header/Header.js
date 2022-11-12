@@ -5,10 +5,6 @@ import { Navbar,Nav } from 'react-bootstrap';
 import HeaderData from './HeaderData';
 import { AuthLoginInfo } from '../AuthComponents/AuthLogin';
 
-const tempfun = () => {
-  console.log("okok");
-}
-
 const logout = () => {
   axios
     .get("http://localhost:8000/logout", {

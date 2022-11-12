@@ -6,7 +6,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Home from './components/Home/Home';
-import About from './components/About/About';
 import PrivateRoute from './components/AuthComponents/PrivateRoute';
 import { AuthLoginInfo }  from './components/AuthComponents/AuthLogin';
 import AdminRoute from './components/AuthComponents/AdminRoute';
@@ -18,6 +17,7 @@ import AirportEmpRoute from './components/AuthComponents/AirportEmpRoute';
 import GateControl from './components/GateControl/GateConrol';
 import AssignBaggage from './components/AssignBaggage/AssignBaggage';
 import FlightSchedules from './components/FlightSchedules/FlightSchedules';
+import { Navigate } from "react-router-dom";
 import Addschedule from './components/Addschedule/addschedule';
 
 function App() {
@@ -36,7 +36,7 @@ function App() {
                 <Login />
               </LoginRoute>
             } />
-            <Route path='/flights' exact element={
+            <Route path='/flights' element={
               <PrivateRoute>
                 <Flights />
               </PrivateRoute>
@@ -56,6 +56,7 @@ function App() {
                 <FlightSchedules />
               </AirlineEmpRoute>
             } />
+            <Route path="*" element={<Navigate to="/login" replace />} />
           </Routes>
         </div>
         <Footer/>
