@@ -16,7 +16,7 @@ const db= mysql.createPool({
 });
 
 const corsOptions = {
-    origin: "http://localhost:3001",
+    origin: "http://localhost:3000",
     credentials: true,
     optionSuccessStatus: 200
   };
@@ -273,6 +273,6 @@ app.post("/addschedule", (req,res) => {
     });
 });
 
-app.listen(5000, () => {
-    console.log("Server running on port 5000")
+app.listen(8000, () => {
+    console.log("Server running on port 8000")
 })

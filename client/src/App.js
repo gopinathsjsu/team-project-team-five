@@ -11,7 +11,9 @@ import { AuthLoginInfo }  from './components/AuthComponents/AuthLogin';
 import AdminRoute from './components/AuthComponents/AdminRoute';
 import LoginRoute from './components/AuthComponents/LoginRoute';
 import Login from './components/Login/Login';
+import Login_p from './components/Login-p/Login';
 import Flights from './components/Flights/Flights';
+import Profile from './components/Profile/Profile';
 import AirlineEmpRoute from './components/AuthComponents/AirlineEmpRoute';
 import AirportEmpRoute from './components/AuthComponents/AirportEmpRoute';
 import GateControl from './components/GateControl/GateConrol';
@@ -24,7 +26,6 @@ function App() {
   const ctx = useContext(AuthLoginInfo);
   console.log(ctx);
 
-function App() {
   return (
     <BrowserRouter>
       <div className="App">
@@ -33,12 +34,17 @@ function App() {
           <Routes>
             <Route path="/login" element={
               <LoginRoute>
-                <Login />
+                <Login_p />
               </LoginRoute>
             } />
             <Route path='/flights' element={
               <PrivateRoute>
                 <Flights />
+              </PrivateRoute>
+            } />
+            <Route path='/profile' element={
+              <PrivateRoute>
+                <Profile />
               </PrivateRoute>
             } />
             <Route path='/assignbaggage' element={
