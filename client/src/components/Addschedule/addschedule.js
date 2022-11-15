@@ -19,7 +19,7 @@ function Addschedule  ()  {
 const addscheduleDetails = () =>{
     alert("in addscheduleDetails method")
 
-    Axios.post("http://localhost:5000/addschedule", {
+    Axios.post("http://localhost:8000/addschedule", {
       airlineName: arlnname ,
       airportCode: arptcode, 
       arrivaltime: arrtime,
