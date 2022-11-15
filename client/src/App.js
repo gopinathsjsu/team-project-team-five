@@ -21,6 +21,8 @@ import AssignBaggage from './components/AssignBaggage/AssignBaggage';
 import FlightSchedules from './components/FlightSchedules/FlightSchedules';
 import { Navigate } from "react-router-dom";
 import Addschedule from './components/Addschedule/addschedule';
+import Signup from './components/Signup/signup'
+import SignupRoute from './components/AuthComponents/SignupRoute';
 
 function App() {
   const ctx = useContext(AuthLoginInfo);
@@ -35,6 +37,11 @@ function App() {
             <Route path="/login" element={
               <LoginRoute>
                 <Login_p />
+              </LoginRoute>
+            } />
+             <Route path="/signup" element={
+              <LoginRoute>
+                <Signup />
               </LoginRoute>
             } />
             <Route path='/flights' element={
@@ -60,6 +67,11 @@ function App() {
             <Route path='/flightschedules' element={
               <AirlineEmpRoute>
                 <FlightSchedules />
+              </AirlineEmpRoute>
+            } />
+             <Route path='/addschedules' element={
+              <AirlineEmpRoute>
+                <Addschedule />
               </AirlineEmpRoute>
             } />
             <Route path="*" element={<Navigate to="/login" replace />} />
