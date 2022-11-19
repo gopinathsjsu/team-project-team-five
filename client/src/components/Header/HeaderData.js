@@ -19,6 +19,21 @@ export const HeaderData = [
     title: "Flight Schedules",
     link: "/flightschedules",
     role: ["airlineemp"]
+  },
+  {
+    title: "Profile",
+    link: "/profile",
+    role: ["airlineemp","airportemp","general"]
+  },
+  {
+    title: "Add schedule",
+    link: "/addschedules",
+    role: ["airlineemp"]
+  },
+  {
+    title: "Singup",
+    link: "/signup",
+    role: ["general"]
   }
 ];
 

@@ -311,5 +311,3 @@ function Flights() {
     </div>
   );
 }
-
-export default Flights;
