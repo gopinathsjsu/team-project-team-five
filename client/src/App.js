@@ -11,7 +11,7 @@ import { AuthLoginInfo }  from './components/AuthComponents/AuthLogin';
 import AdminRoute from './components/AuthComponents/AdminRoute';
 import LoginRoute from './components/AuthComponents/LoginRoute';
 import Login from './components/Login/Login';
-import Login_p from './components/Login-p/Login';
+// import Login_p from './components/Login-p/Login';
 import Flights from './components/Flights/Flights';
 import Profile from './components/Profile/Profile';
 import AirlineEmpRoute from './components/AuthComponents/AirlineEmpRoute';
@@ -36,7 +36,7 @@ function App() {
           <Routes>
             <Route path="/login" element={
               <LoginRoute>
-                <Login_p />
+                <Login />
               </LoginRoute>
             } />
              <Route path="/signup" element={
