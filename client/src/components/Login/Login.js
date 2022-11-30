@@ -1,50 +1,3 @@
-import React, {useState} from 'react';
-import axios from 'axios';
-import './Login.css';
-
-export default function Login() {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
-
-  const login = () => {
-    axios.post("http://localhost:8000/login", {
-      username,
-      password
-    }, {withCredentials: true}).then(res => {
-      console.log(res);
-      if (res.data === 'success') {
-        window.location.href = '/';
-      }
-    })
-  };
-
-  return (<div className="bodyWrap">
-    <div className="contentLoginWrap">
-      <div className="loginSide">
-        <div className="loginWrap">
-          <h1>Log in</h1>
-          <div className="input-group">
-            <input type="text" className="input" onChange={e => setUsername(e.target.value)} required="required"/>
-            <label className={`${username.length > 0 ? "focusLabel" : ""}`}>Login</label>
-          </div>
-          <div className="input-group">
-            <input type="text" className="input password" onChange={e => setPassword(e.target.value)} required="required"/>
-            <label className={`${password.length > 0 ? "focusLabel" : ""}`}>Password</label>
-          </div>
-          <button onClick={login}>Login</button>
-        </div>
-      </div>
-      <div className="infoSide">
-        <div className="loginWrap">
-          <h2>Hello again!</h2>
-          <p>Log in to your account to get access to app.</p>
-        </div>
-      </div>
-    </div>
-  </div>)
-}
-
-
 // import React, { useState, Component, StrictMode } from "react";
 // import Form from "react-bootstrap/Form";
 // import Button from "react-bootstrap/Button";
@@ -101,7 +54,7 @@ export default function Login() {
 //       redirect: 'follow'
 //     };
     
-//     fetch("http://127.0.0.1:5000/login", requestOptions)
+//     fetch("http://127.0.0.1:8000/login", requestOptions)
 //       .then(response => response.text())
 //       .then(result => handleResult(result))
 //       .catch(error => console.log('error', error));
@@ -152,3 +105,48 @@ export default function Login() {
 //   );
 // };
 
+import React, {useState} from 'react';
+import axios from 'axios';
+import './Login.css';
+
+export default function Login() {
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+
+  const login = () => {
+    axios.post("http://localhost:8000/login", {
+      username,
+      password
+    }, {withCredentials: true}).then(res => {
+      console.log(res);
+      if (res.data === 'success') {
+        window.location.href = '/';
+      }
+    })
+  };
+
+  return (<div className="bodyWrap">
+    <div className="contentLoginWrap">
+      <div className="loginSide">
+        <div className="loginWrap">
+          <h1>Log in</h1>
+          <div className="input-group">
+            <input type="text" className="input" onChange={e => setUsername(e.target.value)} required="required"/>
+            <label className={`${username.length > 0 ? "focusLabel" : ""}`}>Login</label>
+          </div>
+          <div className="input-group">
+            <input type="text" className="input password" onChange={e => setPassword(e.target.value)} required="required"/>
+            <label className={`${password.length > 0 ? "focusLabel" : ""}`}>Password</label>
+          </div>
+          <button onClick={login}>Login</button>
+        </div>
+      </div>
+      <div className="infoSide">
+        <div className="loginWrap">
+          <h2>Hello again!</h2>
+          <p>Log in to your account to get access to app.</p>
+        </div>
+      </div>
+    </div>
+  </div>)
+}

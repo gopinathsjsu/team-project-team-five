@@ -6,5 +6,4 @@ const Flights = () => {
   )
 }
 
-export default Flights
-
+export default Flights;

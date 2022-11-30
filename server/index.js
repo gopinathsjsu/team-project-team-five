@@ -242,6 +242,12 @@ app.post("/api/updateUserInfo",(req,res)=>{
     });
 });
 
+app.get("/api/getUsers", (req,res)=>{
+    const query="select * from flights;"
+    db.query(query,(error,result)=>{
+        res.send(JSON.stringify(result));
+    });
+});
 
 //app.listen(8000, () => {
 //    console.log("Server running on port 8000");
