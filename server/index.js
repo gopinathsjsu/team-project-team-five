@@ -9,10 +9,10 @@ const passport = require("passport");
 var bcrypt = require('bcrypt');
 
 const db= mysql.createPool({
-    host:"remotemysql.com",
-    user:"XW1b4VSlnE",
-    password:"xkklxWRGxA",
-    database:"XW1b4VSlnE"
+    host:"localhost",
+    user:"root",
+    password:"",
+    database:"202_new"
 });
 
 const corsOptions = {
@@ -277,6 +277,76 @@ app.post("/addschedule", (req,res) => {
             console.log(error)
         }
     });
+});
+
+app.get("/api/getArriveFlights", (req,res) => {
+    const query = "select `airlinename`,`flightnumber`,`departcity`,`departstatecode`,`departtime`,`arrivetime`,`terminalnumber`,`gatenumber`,`status`,`airriveid` from temp_arrive;"
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.get("/api/getDepartFlights", (req,res) => {
+    const query = "select `airlinename`,`flightnumber`,`departcity`,`departstatecode`,`departtime`,`arrivetime`,`terminalnumber`,`gatenumber`,`status`,`departid` from temp_depart;"
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.get("/api/getGatesInfo", (req,res) => {
+    const query = "select `terminalnumber`,`gatenumber`,`active` from temp_airport;"
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.post("/api/enableGate",(req,res) => {
+    const tno=req.body.tno;
+    const gno=req.body.gno;
+    var query='';
+    if(req.body.condVal=="Enable"){
+        query="update temp_airport set active=1 where terminalnumber='"+tno+"' and gatenumber='"+gno+"';"
+        db.query(query,(error,result)=>{
+            if(error==null){
+                res.send("Success");
+            }
+            else{
+                res.send("An error has occured");
+                console.log(error);
+            }
+        })
+    }
+    else if(req.body.condVal=="Disable"){
+        query="update temp_airport set active=0 where terminalnumber='"+tno+"' and gatenumber='"+gno+"';"
+        db.query(query,(error,result)=>{
+            if(error==null){
+                res.send("Success");
+                var query2="select * from temp_gateavaliability where endtime>'' and gatenumber=gno;";
+            }
+            else{
+                res.send("An error has occured");
+                console.log(error);
+            }
+        })
+    }
 });
 
 app.listen(8000, () => {
