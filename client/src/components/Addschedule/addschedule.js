@@ -35,34 +35,53 @@ const addscheduleDetails = () =>{
 }
     return (
         
-        <div class="flex-container">
-         <form>
-            <label for="arlnname">Airline name:</label>
-            <input type="text" id="arlnname" name="arlnname" value={arlnname} onChange={(e)=>{setAirlineName(e.target.value);}}/>
-            <br></br>
-            <label for="arptcode">Airport code:</label>
-            <input type="text" id="arptcode" name="arptcode" value={arptcode} onChange={(e)=>{setAirportCode(e.target.value);}}/>
-            <br></br>
-            <label for="arrtime">Arrival time:</label>
-            <input type="datetime-local" id="arrtime" name="arrtime" value={arrtime} onChange={(e)=>{setArrivaltime(e.target.value);}}/>
-            <br></br>
-            <label for="gate">Gate:</label>
-            <input type="text" id="gate" name="gate" value={gate} onChange={(e)=>{setGate(e.target.value);}}/>
-            <br></br>
-            <label for="terminal">Terminal:</label>
-            <input type="text" id="terminal" name="terminal" value={terminal} onChange={(e)=>{setTerminal(e.target.value);}}/>
-            <br></br>
-            <label for="fltnum">Flight number:</label>
-            <input type="text" id="fltnum" name="fltnum" value={fltnum} onChange={(e)=>{setFlightnumber(e.target.value);}}/>
-            <br></br>
-            <label for="source">Source:</label>
-            <input type="text" id="source" name="source" value={source} onChange={(e)=>{setSource(e.target.value);}}/>
-            <br></br>
-            <label for="destination">Destination:</label>
-            <input type="text" id="destination" name="destination" value={destination}  onChange={(e)=>{setDestination(e.target.value);}}/>
-            <br></br>   
-            <button onClick={addscheduleDetails}>Add schedule</button>
+        <div>
+         <form >
+          <table className="addschedule-table">
+           <th> </th>
+           <th></th>
+           <tr>
+            <td><label for="arlnname">Airline name:</label></td>
+            <td> <input type="text" id="arlnname" name="arlnname"   value={arlnname} onChange={(e)=>{setAirlineName(e.target.value);}}/></td>
+           </tr>
+           <tr>
+            <td> <label   for="arptcode">Airport code:</label></td>
+            <td> <input type="text"   id="arptcode" name="arptcode" value={arptcode} onChange={(e)=>{setAirportCode(e.target.value);}}/></td>
+           </tr>
+           <tr>
+            <td><label for="arrtime"  >Arrival time:</label></td>
+            <td> <input type="datetime-local"    id="arrtime" name="arrtime" value={arrtime} onChange={(e)=>{setArrivaltime(e.target.value);}}/></td>
+           </tr>
+           <tr>
+            <td><label for="gate"  >Gate:</label></td>
+            <td><input type="text"    id="gate" name="gate" value={gate} onChange={(e)=>{setGate(e.target.value);}}/></td>
+           </tr> 
+           <tr>
+            <td><label for="terminal"  >Terminal:</label></td>
+            <td><input type="text"    id="terminal" name="terminal" value={terminal} onChange={(e)=>{setTerminal(e.target.value);}}/></td>
+           </tr>   
+           <tr>
+            <td><label for="fltnum"  >Flight number:</label></td>
+            <td><input type="text"    id="fltnum" name="fltnum" value={fltnum} onChange={(e)=>{setFlightnumber(e.target.value);}}/></td>
+           </tr> 
+           <tr>
+            <td><label for="source"  >Source:</label></td>
+            <td><input type="text"    id="source" name="source" value={source} onChange={(e)=>{setSource(e.target.value);}}/></td>
+           </tr>  
+           <tr>
+            <td><label for="destination"  >Destination:</label></td>
+            <td><input type="text"    id="destination" name="destination" value={destination}  onChange={(e)=>{setDestination(e.target.value);}}/></td>
+           </tr>         
+           <tr>
+            <td></td>
+            <td><button className="button" onClick={addscheduleDetails}>Add schedule</button></td>
+           </tr>
+          </table>
+          
+            
+            
         </form>
+
         </div>
     )
   }
