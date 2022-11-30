@@ -5,6 +5,8 @@ const mysql = require('mysql');
 
 function initialize(connection, passport) {
   const authenticateUser = async (username, password, done) => {
+    console.log(username)
+    console.log("hmmmmm")
     connection.query('SELECT * FROM temp_accounts WHERE username = ?', [username], async function(error, results, fields) {
       // console.log(results);
       if (results.length > 0) {
