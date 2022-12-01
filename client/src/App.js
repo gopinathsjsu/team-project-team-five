@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import React, { useState,useContext } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom"; import React, { useState,useContext } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
