@@ -2,8 +2,9 @@ import React from 'react'
 
 const AssignBaggage = () => {
   return (
-    <div>AssignBaggage</div>
+    <div>Assign Baggage</div>
   )
+
 }
 
 export default AssignBaggage
