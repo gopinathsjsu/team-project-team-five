@@ -1,6 +1,6 @@
-#Project Journal
+# Project Journal
 
-##Pushya Chandra leburu
+## Pushya Chandra leburu
 
 ### Sprint 1:
 -  **What tasks did I work on / complete?** understanding the project's requirements and creating the UI wireframes for arrival and departure schedules functionality
