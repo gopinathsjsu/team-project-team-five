@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import React, { useState,useContext } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom"; import React, { useState,useContext } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
@@ -45,9 +44,9 @@ function App() {
               </LoginRoute>
             } />
             <Route path='/flights' element={
-              <PrivateRoute>
+              // <PrivateRoute>
                 <Flights />
-              </PrivateRoute>
+              // </PrivateRoute>
             } />
             <Route path='/profile' element={
               <PrivateRoute>
@@ -55,19 +54,19 @@ function App() {
               </PrivateRoute>
             } />
             <Route path='/assignbaggage' element={
-              <AirportEmpRoute>
+              // <AirportEmpRoute>
                 <AssignBaggage />
-              </AirportEmpRoute>
+              // </AirportEmpRoute>
             } />
             <Route path='/gatecontrol' element={
-              <AirportEmpRoute>
+              // <AirportEmpRoute>
                 <GateControl />
-              </AirportEmpRoute>
+              // </AirportEmpRoute>
             } />
             <Route path='/flightschedules' element={
-              <AirlineEmpRoute>
+              // <AirlineEmpRoute>
                 <FlightSchedules />
-              </AirlineEmpRoute>
+              // </AirlineEmpRoute>
             } />
              <Route path='/addschedules' element={
               <AirlineEmpRoute>
