@@ -843,6 +843,64 @@ app.get("/api/getSpecificGateData/:bno", (req,res) => {
     });
 });
 
+app.get("/api/getAssignableFlights", (req,res) => {
+    const query = `select airlinename,
+                    temp_arrive.flightnumber as flightnumber,
+                    departcity,
+                    departstatecode,
+                    departtime,
+                    arrivetime,
+                    temp_airport.terminalnumber  as terminalnumber,
+                    temp_gateavaliability.gatenumber  as gatenumber,
+                    temp_arrive.arriveid as arriveid
+                    from temp_arrive left join 
+                        temp_gateavaliability 
+                        on temp_arrive.arrivetime=temp_gateavaliability.starttime 
+                        and temp_arrive.flightnumber=temp_gateavaliability.flightnumber 
+                            left join temp_airport 
+                            on temp_gateavaliability.gatenumber=temp_airport.gatenumber
+                            where temp_gateavaliability.gatenumber is not null;`
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.post("/api/setSelectBaggageNumber",(req,res)=>{
+    
+    const arriveid=req.body.arriveid;
+    const flightnumber=req.body.flightnumber;
+    const baggagenumber=req.body.baggagenumber;
+    const terminalnumber=req.body.terminalnumber;
+    console.log("Whoa");
+    
+    const query= "update temp_baggage set active=1,arriveid="+arriveid+",currentflightnumber='"+flightnumber+"' where baggagenumber='"+baggagenumber+"' and terminalnumber='"+terminalnumber+"';";
+    const query1= "update temp_baggage set arriveid=null,currentflightnumber=null where terminalnumber='"+terminalnumber+"' and baggagenumber='"+baggagenumber+"' ;";
+    
+    db.query(query1,(error,result)=>{
+        if(error==null){
+            db.query(query,(error,result)=>{
+                if(error==null){
+                    res.send("Success");
+                }
+                else{
+                    res.send("An error has occured");
+                    console.log(error)
+                }
+            });
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
 app.listen(8000, () => {
     console.log("Server running on port 8000")
 })
