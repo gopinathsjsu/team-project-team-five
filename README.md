@@ -23,7 +23,7 @@ added airport and flight details.
 
 
 ## XP Core Values Mainted by Team:
-- Simplicity
+- **Simplicity**
 
 We made sure to include just the most straightforward solutions that worked.
 In order for everyone on the team to understand the code and make changes in the future, if necessary, we made it modular and reusable.
