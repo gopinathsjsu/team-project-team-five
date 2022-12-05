@@ -82,10 +82,11 @@
     -webkit-box-shadow: 0px 0px 33px 0px rgba(219, 221, 255, 0.46);
     -moz-box-shadow: 0px 0px 33px 0px rgba(219, 221, 255, 0.46);
     box-shadow: 0px 0px 33px 0px rgba(219, 225, 255, 0.46);
+    margin-top:50px;
   }
   
   .loginWrap {
-    margin-top: 50px;
+    margin-top: 100px;
     padding: 20px;
   }
   
