@@ -1,10 +1,10 @@
 import React from 'react';
 export const HeaderData = [
-  {
-    title: "Flights",
-    link: "/flights",
-    role: ["airlineemp","airportemp","general"]
-  },
+  // {
+  //   title: "Flights",
+  //   link: "/flights",
+  //   role: ["Air India","Lufthansa","JetBlue","airportemp"]
+  // },
   {
     title: "Gate Control",
     link: "/gatecontrol",
@@ -16,19 +16,14 @@ export const HeaderData = [
     role: ["airportemp"]
   },
   {
-    title: "Flight Schedules",
-    link: "/flightschedules",
-    role: ["airlineemp"]
-  },
-  {
-    title: "Profile",
-    link: "/profile",
-    role: ["airlineemp","airportemp","general"]
-  },
-  {
     title: "Add schedule",
     link: "/addschedules",
-    role: ["airlineemp"]
+    role: ["AirIndia","Lufthansa","JetBlue","airlineemp"]
+  },
+  {
+    title: "View or Edit Schedules",
+    link: "/vieworeditschedules",
+    role: ["AirIndia","Lufthansa","JetBlue","airlineemp"]
   },
   {
     title: "Singup",
