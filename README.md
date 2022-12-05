@@ -41,11 +41,11 @@ We had frequent sprint meetings where we used to dicuss the issues faced by team
 
 # Scrum Artifacts and Diagrams
 1. [Sprint Sheet](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Sprint%20Task%20Sheet%20-%20team%205.xlsx)
-2. [Scrum sheet] (https://github.com/gopinathsjsu/team-project-team-five/blob/main/DAILY%20SCRUM%20SHEET%20_%20Team%20Five.xlsx)
+2. [Scrum sheet](https://github.com/gopinathsjsu/team-project-team-five/blob/main/DAILY%20SCRUM%20SHEET%20_%20Team%20Five.xlsx)
 3. [Project Journal](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Journal.md)
 4. [Project Board](https://github.com/orgs/gopinathsjsu/projects/32)
 5. [System Architecture diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/CMPE%20202%20_%20Architecture%20Diagram.png)
 6. [Wireframes](https://github.com/gopinathsjsu/team-project-team-five/tree/main/wireframes)
 7. [Component Diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Component%20Diagram.jpg)
-8. [Deployment Diagram]()
+8. [Deployment Diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Deployment_Diagram.png)
 7. [DB Schema diagram]()
