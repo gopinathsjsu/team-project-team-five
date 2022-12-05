@@ -51,4 +51,4 @@ We had frequent sprint meetings where we used to dicuss the issues faced by team
 6. [Wireframes](https://github.com/gopinathsjsu/team-project-team-five/tree/main/wireframes)
 7. [Component Diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Component%20Diagram.jpg)
 8. [Deployment Diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/Deployment_Diagram.png)
-7. [DB Schema diagram]()
+7. [DB Schema diagram](https://github.com/gopinathsjsu/team-project-team-five/blob/main/client/src/assets/erd.jpg)
