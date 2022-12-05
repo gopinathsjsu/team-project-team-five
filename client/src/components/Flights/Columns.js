@@ -50,10 +50,10 @@ export const Columns = [[
       key: "gatenumber"
     },
     {
-      title: "Status",
-      dataIndex: "status",
-      key: "status"
-    }
+      title: "Baggage Carousal",
+      dataIndex: "baggagenumber",
+      key: "baggagenumber",
+    },
   ],
   [
     {
@@ -67,13 +67,13 @@ export const Columns = [[
       key: "flightnumber"
     },
     {
-      title: "Depart City",
-      dataIndex: "departcity",
+      title: "Airrive City",
+      dataIndex: "arrivecity",
       key: "departcity"
     },
     {
-      title: "Depart State Code",
-      dataIndex: "departstatecode",
+      title: "Arrive State Code",
+      dataIndex: "arrivestatecode",
       key: "departstatecode",
     },
     {
@@ -105,11 +105,6 @@ export const Columns = [[
       title: "Gate Number",
       dataIndex: "gatenumber",
       key: "gatenumber"
-    },
-    {
-      title: "Status",
-      dataIndex: "status",
-      key: "status"
     }
   ]
 ];

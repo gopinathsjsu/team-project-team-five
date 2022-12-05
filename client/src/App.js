@@ -23,6 +23,7 @@ import { Navigate } from "react-router-dom";
 import Addschedule from './components/Addschedule/addschedule';
 import Signup from './components/Signup/signup'
 import SignupRoute from './components/AuthComponents/SignupRoute';
+import VieworEditAddedSchedules from './components/VieworEditAddedSchedules/VieworEditAddedSchedules'
 
 function App() {
   const ctx = useContext(AuthLoginInfo);
@@ -45,33 +46,33 @@ function App() {
               </LoginRoute>
             } />
             <Route path='/flights' element={
-              // <PrivateRoute>
-                <Flights />
-              // </PrivateRoute>
-            } />
-            <Route path='/profile' element={
               <PrivateRoute>
-                <Profile />
+                <Flights />
               </PrivateRoute>
             } />
             <Route path='/assignbaggage' element={
-              // <AirportEmpRoute>
+              <AirportEmpRoute>
                 <AssignBaggage />
-              // </AirportEmpRoute>
+              </AirportEmpRoute>
             } />
             <Route path='/gatecontrol' element={
-              // <AirportEmpRoute>
+              <AirportEmpRoute>
                 <GateControl />
-              // </AirportEmpRoute>
+               </AirportEmpRoute>
             } />
             <Route path='/flightschedules' element={
-              // <AirlineEmpRoute>
+              <AirlineEmpRoute>
                 <FlightSchedules />
-              // </AirlineEmpRoute>
+              </AirlineEmpRoute>
             } />
              <Route path='/addschedules' element={
               <AirlineEmpRoute>
                 <Addschedule />
+              </AirlineEmpRoute>
+            } />
+             <Route path='/vieworeditschedules' element={
+              <AirlineEmpRoute>
+                <VieworEditAddedSchedules />
               </AirlineEmpRoute>
             } />
             <Route path="*" element={<Navigate to="/login" replace />} />

@@ -36,6 +36,7 @@ const Navbar2 = ({ctx}) => {
   return(
     <Navbar className="navbar2" expand="lg">
       <Nav className="ml-auto">
+      <Nav.Item><Nav.Link href={"/flights"}>{"Flights"}</Nav.Link></Nav.Item>
         {HeaderData.map((val,key)=>{
           if (val?.role !== undefined && !val?.role.includes(ctx?.role)) {
             return null;
