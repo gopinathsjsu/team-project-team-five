@@ -143,8 +143,8 @@ export default function Login() {
       </div>
       <div className="infoSide">
         <div className="loginWrap">
-          <h2>Hello again!</h2>
-          <p>Log in to your account to get access to app.</p>
+          <h6>Welcome to</h6>
+          <h4>San Jose Airport Management System</h4>
         </div>
       </div>
     </div>
