@@ -10,7 +10,7 @@
 - **Pushya Chandra Leburu**: Scrum Master, AWS Deployment, RDS Setup, Backend API implementation - enable/disable gates, baggage carousel assignment, arrival and   departure for 2hr, 4hr etc,  UI Integration - for gate assignment and baggage carousel.
 - **Nalini Mehendale**: AWS Deployment, Autoscaling and loadbalancer setup, Backend API implementation - passenger flight view details, gate assignment, UI for  home page, login, add schedule, update schedule, flight details .
 - **Sahithi Bommadi**: UI Implementation - Add schedules, arrival and departure schedule, signup and login integration on backend,
-integrated sing up and profile page on front end, UI implementation for baggage carousel.
+integrated sign up and profile page on front end, UI implementation for baggage carousel.
 - **Sri Thulasi Polavarapu**: UI Implementation and integration of flight schedule page, airline employee UI modifications,
 added airport and flight details.
 
