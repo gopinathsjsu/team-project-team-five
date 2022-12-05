@@ -14,6 +14,8 @@ const GateConrol = () => {
       .then((response) => response.json())
       .then((actualData) => {
         setData(actualData);
+
+        
       })
       .catch((err) => {
         console.log(err.message);

@@ -1,5 +1,4 @@
-import { BrowserRouter, Routes, Route} from "react-router-dom";
-import React, { useState,useContext } from "react";
+import { BrowserRouter, Routes, Route} from "react-router-dom"; import React, { useState,useContext } from "react";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 
@@ -11,7 +10,7 @@ import { AuthLoginInfo }  from './components/AuthComponents/AuthLogin';
 import AdminRoute from './components/AuthComponents/AdminRoute';
 import LoginRoute from './components/AuthComponents/LoginRoute';
 import Login from './components/Login/Login';
-import Login_p from './components/Login-p/Login';
+// import Login_p from './components/Login-p/Login';
 import Flights from './components/Flights/Flights';
 import Profile from './components/Profile/Profile';
 import AirlineEmpRoute from './components/AuthComponents/AirlineEmpRoute';
@@ -36,7 +35,7 @@ function App() {
           <Routes>
             <Route path="/login" element={
               <LoginRoute>
-                <Login_p />
+                <Login />
               </LoginRoute>
             } />
              <Route path="/signup" element={
@@ -45,9 +44,9 @@ function App() {
               </LoginRoute>
             } />
             <Route path='/flights' element={
-              <PrivateRoute>
+              // <PrivateRoute>
                 <Flights />
-              </PrivateRoute>
+              // </PrivateRoute>
             } />
             <Route path='/profile' element={
               <PrivateRoute>
@@ -55,19 +54,19 @@ function App() {
               </PrivateRoute>
             } />
             <Route path='/assignbaggage' element={
-              <AirportEmpRoute>
+              // <AirportEmpRoute>
                 <AssignBaggage />
-              </AirportEmpRoute>
+              // </AirportEmpRoute>
             } />
             <Route path='/gatecontrol' element={
-              <AirportEmpRoute>
+              // <AirportEmpRoute>
                 <GateControl />
-              </AirportEmpRoute>
+              // </AirportEmpRoute>
             } />
             <Route path='/flightschedules' element={
-              <AirlineEmpRoute>
+              // <AirlineEmpRoute>
                 <FlightSchedules />
-              </AirlineEmpRoute>
+              // </AirlineEmpRoute>
             } />
              <Route path='/addschedules' element={
               <AirlineEmpRoute>

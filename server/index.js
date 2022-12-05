@@ -290,6 +290,7 @@ app.post("/addschedule", (req,res) => {
 });
 
 app.get("/api/getArriveFlights", (req,res) => {
+
     const query =  `select airlinename,
                         temp_arrive.flightnumber as flightnumber,
                         departcity,
@@ -555,15 +556,16 @@ app.post("/api/enableGate",(req,res) => {
     const tno=req.body.tno;
     const gno=req.body.gno;
     var query='';
+
     var query1='';
     // var now=moment.utc().local().format();
     var now=moment();
+
     if(req.body.condVal=="Enable"){
         query="update temp_airport set active=1 where terminalnumber='"+tno+"' and gatenumber='"+gno+"';"
         db.query(query,(error,result)=>{
             if(error==null){
                 res.send("Success");
-                // var query2="select * from temp_gateavaliability where endtime>'' and gatenumber=gno;";
             }
             else{
                 res.send("An error has occured");
@@ -573,6 +575,7 @@ app.post("/api/enableGate",(req,res) => {
     }
     else if(req.body.condVal=="Disable"){
         query="update temp_airport set active=0 where terminalnumber='"+tno+"' and gatenumber='"+gno+"';"
+
         query1="call gate_reroute('"+gno+"','"+now+"')"
         db.query(query,(error,result)=>{
             if(error==null){
@@ -708,9 +711,6 @@ app.post("/api/editDepartureDetails",(req,res)=>{
         }
     })
 });
-
-
-
 
 
 app.listen(8000, () => {
