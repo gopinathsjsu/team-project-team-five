@@ -1,10 +1,10 @@
 # Airport Management System - Team Five
 
 ## Team Members:
-- Nalini Mehendale
-- Pushya Chandra Leburu
-- Sahithi Bommadi
-- Sri Thulasi Polavarapu
+- Nalini Mehendale 015312206
+- Pushya Chandra Leburu 016691116
+- Sahithi Bommadi 015949219
+- Sri Thulasi Polavarapu 016037060
 
 ## Team Members and Contribution gist:
 - Pushya Chandra Leburu 016691116: Scrum Master, AWS Deployment, RDS Setup, Backend API implementation - enable/disable gates, baggage carousel assignment, arrival and   departure for 2hr, 4hr etc,  UI Integration - for gate assignment and baggage carousel.
