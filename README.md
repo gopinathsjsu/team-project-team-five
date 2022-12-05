@@ -6,18 +6,21 @@
 - Sahithi Bommadi
 - Sri Thulasi Polavarapu
 
+## Team Members and Contribution gist:
+- Pushya Chandra Leburu 016691116: Scrum Master, AWS Deployment, RDS Setup, Backend API implementation - enable/disable gates, baggage carousel assignment, arrival and   departure for 2hr, 4hr etc,  UI Integration - for gate assignment and baggage carousel.
+- Nalini Mehendale 015312206: AWS Deployment, Autoscaling and loadbalancer setup, Backend API implementation - passenger flight view details, gate assignment, UI for  home page, login, add schedule, update schedule, flight details .
+- Sahithi Bommadi 015949219: UI Implementation - Add schedules, arrival and departure schedule, signup and login integration on backend,
+integrated sing up and profile page on front end, UI implementation for baggage carousel.
+- Sri Thulasi Polavarapu 016037060: UI Implementation and integration of flight schedule page, airline employee UI modifications,
+added airport and flight details.
+
 # Technology Stack
 1. Front-end: ReactJS, Bootstrap, HTML, CSS, Express
 2. Back-end: Node.js
 3. Database: MySQL
 4. Deployment: AWS Elastic Beanstalk, AWS RDS (For DB)
 
-### Credentials:
-- Username: admin
-- Hostname : airlinemanagement.cg5nflqlwqvp.us-west-1.rds.amazonaws.com
-- Password: password
-- Port: 3306
-- Schema: 202AirlineDB
+
 
 ## XP Core Values Mainted by Team:
 - Simplicity
