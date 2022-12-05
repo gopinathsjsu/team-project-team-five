@@ -13,11 +13,11 @@
 4. Deployment: AWS Elastic Beanstalk, AWS RDS (For DB)
 
 ### Credentials:
-- Username: XW1b4VSlnE
-- Database name: XW1b4VSlnE
-- Password: xkklxWRGxA
-- Server: remotemysql.com
+- Username: admin
+- Hostname : airlinemanagement.cg5nflqlwqvp.us-west-1.rds.amazonaws.com
+- Password: password
 - Port: 3306
+- Schema: 202AirlineDB
 
 ## XP Core Values Mainted by Team:
 - Simplicity
