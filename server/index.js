@@ -712,6 +712,136 @@ app.post("/api/editDepartureDetails",(req,res)=>{
     })
 });
 
+app.post("/api/deleteArrivalFlight",(req,res)=>{
+    const arriveid=req.body.arriveid;
+    // console.log(req.body);
+    const query="delete from temp_arrive where arriveid="+arriveid+";";
+    const query1="delete from temp_gateavaliability where arriveid="+arriveid+";";
+    db.query(query,(error,result)=>{
+        if(error==null){
+            db.query(query1,(error,result)=>{
+                if(error==null){
+                    res.send("Success");
+                }
+                else{
+                    res.send("An error has occured");
+                    console.log(error);
+                }
+            })
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error);
+        }
+    })
+})
+
+app.post("/api/deleteDepartureFlight",(req,res)=>{
+    const departid=req.body.departid;
+    const query="delete from temp_depart where departid="+departid+";";
+    const query1="delete from temp_gateavaliability where departid="+departid+";";
+    db.query(query,(error,result)=>{
+        if(error==null){
+            db.query(query1,(error,result)=>{
+                if(error==null){
+                    res.send("Success");
+                }
+                else{
+                    res.send("An error has occured");
+                    console.log(error);
+                }
+            })
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error);
+        }
+    })
+})
+
+app.get("/api/getDepartDataForVieworEdit",(req,res)=>{
+    const query = `select airlinename,
+                        temp_depart.flightnumber as flightnumber,
+                        arrivecity,
+                        arrivestatecode,
+                        date_sub(departtime, interval 8 hour) as departtime,
+                        date_sub(arrivetime, interval 8 hour) as arrivetime,
+                        ifnull(temp_airport.terminalnumber,'Not Assigned')  as terminalnumber,
+                        ifnull(temp_gateavaliability.gatenumber,'Not Assigned')  as gatenumber,
+                        temp_depart.departid as departid
+                        from temp_depart left join 
+                            temp_gateavaliability 
+                            on temp_depart.departtime=temp_gateavaliability.starttime 
+                            and temp_depart.flightnumber=temp_gateavaliability.flightnumber 
+                                left join temp_airport 
+                                on temp_gateavaliability.gatenumber=temp_airport.gatenumber;`
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.get("/api/getArriveDataForVieworEdit",(req,res)=>{
+    const query = `select airlinename,
+                        temp_arrive.flightnumber as flightnumber,
+                        departcity,
+                        departstatecode,
+                        date_sub(departtime,interval 8 hour) as departtime,
+                        date_sub(arrivetime,interval 8 hour) as arrivetime,
+                        ifnull(temp_airport.terminalnumber,'Not Assigned')  as terminalnumber,
+                        ifnull(temp_gateavaliability.gatenumber,'Not Assigned')  as gatenumber,
+                        temp_arrive.arriveid as arriveid 
+                        from temp_arrive left join 
+                            temp_gateavaliability 
+                            on temp_arrive.arrivetime=temp_gateavaliability.starttime 
+                            and temp_arrive.flightnumber=temp_gateavaliability.flightnumber 
+                                left join temp_airport 
+                                on temp_gateavaliability.gatenumber=temp_airport.gatenumber;`
+    db.query(query,(error,result)=>{
+        if(error==null){
+            console.log(result);
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.get("/api/getBaggageInfo", (req,res) => {
+    const query = "select `terminalnumber`,`baggagenumber`,`active`,`arriveid`,`currentflightnumber` from temp_baggage;"
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
+
+app.get("/api/getSpecificGateData/:bno", (req,res) => {
+    // console.log(req.body);
+    const bgno=req.params.bno.split("=")[1];
+    console.log(req.params.bno.split("=")[1].toString());
+    const query = "select airlinename,temp_arrive.flightnumber,arrivetime,terminalnumber,gatenumber,baggagenumber from 202AirlineDB.temp_baggage join 202AirlineDB.temp_arrive on temp_baggage.arriveid=temp_arrive.arriveid left join 202AirlineDB.temp_gateavaliability on temp_arrive.arriveid=temp_gateavaliability.arriveid where baggagenumber='"+bgno+"';"
+    db.query(query,(error,result)=>{
+        if(error==null){
+            res.send(JSON.stringify(result));
+        }
+        else{
+            res.send("An error has occured");
+            console.log(error)
+        }
+    });
+});
 
 app.listen(8000, () => {
     console.log("Server running on port 8000")
